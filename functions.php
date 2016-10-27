@@ -64,6 +64,15 @@ function blank_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+	//Custom logo
+	add_theme_support( 'custom-logo', array(
+		'height'      => 100,
+		'width'       => 200,
+		'flex-height' => true,
+		'flex-width'  => true,
+		'header-text' => array( 'site-title', 'site-description' ),
+	) );
 }
 endif;
 add_action( 'after_setup_theme', 'blank_setup' );
@@ -138,3 +147,45 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+//* Create Custom Post Type
+add_action( 'init', 'add_custom_post_type' );
+function add_custom_post_type() {
+
+	register_post_type( 'staff',
+		array(
+			'labels' => array(
+				'name'          => __( 'Staff', 'Post Type General Name', 'wp_blank' ),
+				'singular_name' => __( 'Staff', 'Post Type Singular Name', 'wp_blank' ),
+				'all_items'     => __( 'All Staff', 'wp_blank' ),
+				'view_item'     => __( 'View Staff', 'wp_blank' ),
+				'add_new_item'  => __( 'Add New Staff', 'wp_blank' ),
+				'add_new'       => __( 'Add New', 'wp_blank' ),
+				'edit_item'     => __( 'Edit Staff', 'wp_blank' ),
+				'update_item'   => __( 'Update Staff', 'wp_blank' ),
+				'search_items'  => __( 'Search Staff', 'wp_blank' ),
+			),
+			'has_archive'  => true,
+			'hierarchical' => true,
+      'menu_icon'    => 'dashicons-admin-users',
+			'public'       => true,
+			'rewrite'      => array( 'slug' => 'members', 'with_front' => false ),
+			'can_export'          => true,
+			'supports'     => array(  ),
+			'taxonomies'   => array( 'category' ),
+      'menu_position' => 4
+
+		));	
+}
+
+	
+
+
+/**
+ * Load Dashicon
+ */
+add_action( 'wp_enqueue_scripts', 'load_dashicons_front_end' );
+function load_dashicons_front_end() {
+wp_enqueue_style( 'dashicons' );
+}

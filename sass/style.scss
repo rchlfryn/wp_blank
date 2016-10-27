@@ -1,8 +1,8 @@
 /*!
-Theme Name: blank
-Theme URI: http://underscores.me/
+Theme Name: wp_blank
+Theme URI: http://rachelfryan.com/
 Author: Underscores.me
-Author URI: http://underscores.me/
+Author URI: http://rachelfryan.com/
 Description: Description
 Version: 1.0.0
 License: GNU General Public License v2 or later
@@ -42,8 +42,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
-@import "variables-site/variables-site";
-@import "mixins/mixins-master";
+@import "default/mixins";
 
 /*--------------------------------------------------------------
 # Normalize
@@ -51,19 +50,18 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "normalize";
 
 /*--------------------------------------------------------------
-# Typography
+# Default
 --------------------------------------------------------------*/
-@import "typography/typography";
+@import "default/colors";
+@import "default/elements";
+@import "default/forms";
+@import "default/structure";
+@import "default/typography";
 
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
-@import "elements/elements";
-
-/*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
-@import "forms/forms";
+@import "elements/header";
 
 /*--------------------------------------------------------------
 # Navigation
@@ -71,18 +69,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "navigation/navigation";
 
 /*--------------------------------------------------------------
-# Accessibility
+# Modules
 --------------------------------------------------------------*/
 @import "modules/accessibility";
-
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
 @import "modules/alignments";
-
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
 @import "modules/clearings";
 
 /*--------------------------------------------------------------

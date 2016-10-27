@@ -13,33 +13,27 @@
  */
 
 get_header(); ?>
-
+	<div class="content-container">
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" role="main">
 
 		<!-- Hero section -->
 		<div class="hero">
-			<img src="http://placehold.it/1000x500">
-			<button>Call to action</button>
+			<img src="http://placehold.it/1100x500">
+			<button class="hero-cta">Call to action</button>
 		</div>
 
-		
-			<?php
-			while ( have_posts() ) : the_post();
-
-				get_template_part( 'template-parts/content', 'page' );
-
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-
-			endwhile; // End of the loop.
-			?>
+		<div class="main-content">
+			<div class="boxes">
+				<div class="box"></div>
+				<div class="box"></div>
+				<div class="box"></div>
+				<div class="box"></div>
+			</div>
+		</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+</div>
 <?php
-// get_sidebar();
 get_footer();

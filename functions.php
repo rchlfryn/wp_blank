@@ -172,10 +172,9 @@ function add_custom_post_type() {
 			'public'       => true,
 			'rewrite'      => array( 'slug' => 'members', 'with_front' => false ),
 			'can_export'          => true,
-			'supports'     => array(  ),
+			'supports'     => array( 'title', 'editor', 'excerpt',  'thumbnail', 'custom-fields' ),
 			'taxonomies'   => array( 'category' ),
       'menu_position' => 4
-
 		));	
 }
 

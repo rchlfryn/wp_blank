@@ -3,6 +3,7 @@
 	display: block;
 	float: right;
 	width: 70%;
+	margin: 90px 0;
 
 	ul {
 		display: none;
@@ -52,7 +53,9 @@
 	li {
 		float: left;
 		position: relative;
-		padding-right: 10px;
+		padding: 10px 30px;
+		background: grey;
+		border-right: 1px solid blue;
 
 		&:hover > a,
 		&.focus > a {

@@ -21,12 +21,14 @@ get_header(); ?>
 $args = array( 'post_type' => 'staff', 'posts_per_page' => -1, 'order' => 'ASC' );
 $loop = new WP_Query( $args );
 while ( $loop->have_posts() ) : $loop->the_post();
-  the_title();
-  echo '<div class="entry-content">';
-  the_content();
+	echo '<div class="staff-member">';
+  	the_title();
+   	echo '<div class="staff-content">';
+  		the_content();
+  	echo '</div>';
   echo '</div>';
 endwhile; ?>
-
+		<div class="clearfix"></div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

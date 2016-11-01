@@ -17,17 +17,29 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+		<div class="staff-selected">
+			<div class="staff-image-selected"><img src=""></div>
+			<h3 class="staff-name-selected"> Click staff photo below</h3>
+		</div>
+
 <?php 
 $args = array( 'post_type' => 'staff', 'posts_per_page' => -1, 'order' => 'ASC' );
 $loop = new WP_Query( $args );
-while ( $loop->have_posts() ) : $loop->the_post();
-	echo '<div class="staff-member">';
-  	the_title();
-   	echo '<div class="staff-content">';
-  		the_content();
-  	echo '</div>';
-  echo '</div>';
-endwhile; ?>
+while ( $loop->have_posts() ) : $loop->the_post(); ?>
+	<div class="staff-member">
+
+ 		<div class="staff-content">
+	 		<h3 class="staff-name">
+	 			<?php the_title(); ?>
+	 		</h3>
+ 			<div class="staff-bio">
+			<?php the_content();?>
+			</div>
+		</div>
+
+		<div class="staff-image"><?php the_post_thumbnail(); ?></div>
+	</div>
+<?php endwhile; ?>
 		<div class="clearfix"></div>
 		</main><!-- #main -->
 	</div><!-- #primary -->

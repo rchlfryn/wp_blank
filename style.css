@@ -657,11 +657,22 @@ big {
 }
 
 /* line 1, sass/layout/_staff.scss */
+.staff-selected {
+  width: 100%;
+  text-align: center;
+}
+
+/* line 6, sass/layout/_staff.scss */
 .staff-member {
   float: left;
   width: 24%;
   margin-right: 1%;
   background: grey;
+}
+
+/* line 13, sass/layout/_staff.scss */
+.staff-content {
+  display: none;
 }
 
 /*--------------------------------------------------------------

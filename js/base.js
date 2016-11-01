@@ -8,7 +8,15 @@
 
 ( function( $ ) {
 
-	$('.staff-member').on( 'click', function() {
-  	this.addClass('love';)
-	});
+	// Staff memeber selection function
+	$('.staff-member').on('click',function(){
+	  $('.staff-member').removeClass('active');
+	  $(this).addClass('active');
+	 	var activeStaffName = $(this).find('.staff-name')[0].innerText;
+	 	var activeStaffImage = $(this).find('.staff-image img').attr('src');
+	 	console.log(activeStaffImage)
+	 	$('.staff-name-selected')[0].innerText = activeStaffName;
+	 	$('.staff-image-selected img').attr('src', activeStaffImage);
+	})
+
 } )( jQuery );

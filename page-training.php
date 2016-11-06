@@ -17,11 +17,15 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<header>
-			<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-		</header>
-	
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
+		<h1 class="page-title screen-reader-text"><?php the_title(); ?></h1>  
+		
+		        <div class="entry">
+		            <?php the_content(); ?>
+		        </div><!-- entry -->
+		<?php endwhile; ?>
+		<?php endif; ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

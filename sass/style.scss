@@ -1,8 +1,8 @@
 /*!
-Theme Name: blank
-Theme URI: http://underscores.me/
+Theme Name: wp_blank
+Theme URI: http://rachelfryan.com/
 Author: Underscores.me
-Author URI: http://underscores.me/
+Author URI: http://rachelfryan.com/
 Description: Description
 Version: 1.0.0
 License: GNU General Public License v2 or later
@@ -42,8 +42,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
-@import "variables-site/variables-site";
-@import "mixins/mixins-master";
+@import "default/mixins";
 
 /*--------------------------------------------------------------
 # Normalize
@@ -51,39 +50,34 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "normalize";
 
 /*--------------------------------------------------------------
-# Typography
+# Default
 --------------------------------------------------------------*/
-@import "typography/typography";
+// @import "default/accessibility";
+@import "default/alignments";
+@import "default/clearings";
+@import "default/colors";
+@import "default/elements";
+@import "default/forms";
+@import "default/infinite-scroll";
+@import "default/structure";
+@import "default/typography";
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+@import "layout/base";
+@import "layout/staff";
 
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
-@import "elements/elements";
-
-/*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
-@import "forms/forms";
+@import "elements/header";
+@import "elements/sidebar";
 
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
 @import "navigation/navigation";
-
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
-@import "modules/accessibility";
-
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-@import "modules/alignments";
-
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
-@import "modules/clearings";
 
 /*--------------------------------------------------------------
 # Widgets
@@ -98,7 +92,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
-@import "modules/infinite-scroll";
 
 /*--------------------------------------------------------------
 # Media

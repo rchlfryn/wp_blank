@@ -1,8 +1,11 @@
 .main-navigation {
-	clear: both;
+	// clear: both;
 	display: block;
-	float: left;
-	width: 100%;
+	float: right;
+	margin: 30px 0;
+	@include breakpoint ('tablet') {
+		margin: 90px 0;
+	}
 
 	ul {
 		display: none;
@@ -50,8 +53,13 @@
 	}
 
 	li {
-		float: left;
 		position: relative;
+		padding: 10px 30px;
+		background: grey;
+		border-right: 1px solid blue;
+		@include breakpoint ('tablet') {
+			float: left;
+		}
 
 		&:hover > a,
 		&.focus > a {
@@ -76,7 +84,14 @@
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+.menu-toggle {
+	position: absolute;
+	right: 0;
+}
+.main-navigation.toggled ul {
+	margin-top: 50px;
+}
+@include breakpoint ('tablet') {
 	.menu-toggle {
 		display: none;
 	}
